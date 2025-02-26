@@ -1,78 +1,96 @@
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import NavigationBar from "@/components/common/NavigationBar";
-import { Search, SlidersHorizontal, Clock, Star, DollarSign } from "lucide-react";
+import RestaurantCard from "@/components/home/RestaurantCard";
+import { Search, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+const restaurants = [
+  {
+    id: 1,
+    name: "Coastal Paradise",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    rating: 4.8,
+    cuisine: "Seafood • Local",
+    deliveryTime: "25-35",
+  },
+  {
+    id: 2,
+    name: "Garden Fresh",
+    image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+    rating: 4.5,
+    cuisine: "Vegetarian • Healthy",
+    deliveryTime: "20-30",
+  },
+  {
+    id: 3,
+    name: "Spice Route",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+    rating: 4.7,
+    cuisine: "Indian • Asian",
+    deliveryTime: "30-40",
+  },
+];
+
+const categories = [
+  "Popular", "Trending", "New", "Healthy", "Local Favorites"
+];
 
 const Browse = () => {
-  const filters = [
-    { icon: <Clock className="w-4 h-4" />, label: "Delivery Time" },
-    { icon: <Star className="w-4 h-4" />, label: "Rating 4.5+" },
-    { icon: <DollarSign className="w-4 h-4" />, label: "Price" },
-  ];
-
   return (
-    <div className="min-h-screen bg-background pb-24">
-      <header className="sticky top-0 z-10 bg-background p-4 glass-card">
-        <div className="container max-w-lg mx-auto space-y-4">
-          <div className="flex gap-2">
-            <div className="relative flex-1">
-              <Input
-                type="text"
-                placeholder="Search dishes or restaurants"
-                className="w-full pl-10 pr-4 h-12 rounded-full"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-            </div>
-            <Button variant="outline" size="icon" className="h-12 w-12 rounded-full">
-              <SlidersHorizontal className="h-5 w-5" />
-            </Button>
-          </div>
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {filters.map((filter) => (
-              <Button
-                key={filter.label}
-                variant="outline"
-                className="rounded-full flex gap-2 whitespace-nowrap"
-              >
-                {filter.icon}
-                {filter.label}
-              </Button>
-            ))}
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="p-4 glass-card sticky top-0 z-10">
+        <div className="container max-w-lg mx-auto">
+          <h1 className="text-2xl font-bold mb-4">Browse</h1>
+          <div className="relative">
+            <Input
+              type="text"
+              placeholder="Search restaurants, dishes..."
+              className="w-full pl-10 pr-4 h-12 rounded-full"
+            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
           </div>
         </div>
       </header>
 
-      <main className="container max-w-lg mx-auto p-4">
-        <h2 className="text-lg font-semibold mb-4">Today's Special</h2>
-        <div className="grid gap-4">
-          {[...Array(5)].map((_, index) => (
-            <div
-              key={index}
-              className="glass-card rounded-lg p-4 flex gap-4 items-center"
-            >
-              <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                <img
-                  src={`https://picsum.photos/200/200?random=${index}`}
-                  alt="Food"
-                  className="w-full h-full object-cover"
-                />
+      <main className="container max-w-lg mx-auto px-4 pb-24">
+        {/* Categories */}
+        <div className="my-6">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-lg font-semibold">Categories</h2>
+            <Button variant="ghost" className="text-sm text-coral hover:text-coral-light">
+              See all <ChevronRight className="h-4 w-4 ml-1" />
+            </Button>
+          </div>
+          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant="outline"
+                className="whitespace-nowrap"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Restaurants */}
+        <div>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Popular Restaurants</h2>
+            <Button variant="ghost" className="text-sm text-coral hover:text-coral-light">
+              See all <ChevronRight className="h-4 w-4 ml-1" />
+            </Button>
+          </div>
+          <div className="grid gap-4">
+            {restaurants.map((restaurant) => (
+              <div key={restaurant.id}>
+                <RestaurantCard {...restaurant} />
               </div>
-              <div className="flex-1">
-                <h3 className="font-semibold mb-1">Special Dish {index + 1}</h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Restaurant {index + 1}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-coral">$12.99</span>
-                  <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                    <span className="text-sm">4.8</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </main>
 
