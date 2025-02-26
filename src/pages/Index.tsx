@@ -38,12 +38,12 @@ const categories = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="p-4 glass-card sticky top-0 z-10">
         <div className="container max-w-lg mx-auto">
-          <h1 className="text-2xl font-bold mb-4 slide-up">Paradise Eats</h1>
-          <div className="relative fade-in">
+          <h1 className="text-2xl font-bold mb-4">Paradise Eats</h1>
+          <div className="relative">
             <Input
               type="text"
               placeholder="Search restaurants, dishes..."
@@ -54,9 +54,9 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="container max-w-lg mx-auto mt-6">
+      <main className="container max-w-lg mx-auto px-4 pb-24">
         {/* Categories */}
-        <div className="px-4 mb-6 slide-up" style={{ animationDelay: "0.1s" }}>
+        <div className="my-6">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold">Categories</h2>
             <Button variant="ghost" className="text-sm text-coral hover:text-coral-light">
@@ -77,22 +77,16 @@ const Index = () => {
         </div>
 
         {/* Restaurants */}
-        <div className="px-4">
+        <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold slide-up" style={{ animationDelay: "0.2s" }}>
-              Popular Restaurants
-            </h2>
-            <Button variant="ghost" className="text-sm text-coral hover:text-coral-light slide-up" style={{ animationDelay: "0.2s" }}>
+            <h2 className="text-lg font-semibold">Popular Restaurants</h2>
+            <Button variant="ghost" className="text-sm text-coral hover:text-coral-light">
               See all <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
           <div className="grid gap-4">
-            {restaurants.map((restaurant, index) => (
-              <div
-                key={restaurant.id}
-                className="slide-up"
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-              >
+            {restaurants.map((restaurant) => (
+              <div key={restaurant.id}>
                 <RestaurantCard {...restaurant} />
               </div>
             ))}
