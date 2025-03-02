@@ -13,12 +13,6 @@ const Index = () => {
   const currentTime = new Date().getHours();
   const greeting = currentTime < 12 ? "Good morning" : currentTime < 18 ? "Good afternoon" : "Good evening";
   
-  const quickActions = [
-    { label: "Hungry", action: () => setSelectedMood("hungry") },
-    { label: "Thirsty", action: () => setSelectedMood("thirsty") },
-    { label: "Both", action: () => setSelectedMood("both") },
-  ];
-
   const recommendations = [
     {
       id: 1,
@@ -48,12 +42,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top Section - AI Greeting */}
+      {/* Header */}
       <header className="p-6 glass-card sticky top-0 z-10">
-        <div className="container max-w-lg mx-auto space-y-6">
+        <div className="container max-w-lg mx-auto">
+          <h1 className="text-2xl font-bold">Paradise Eats</h1>
+        </div>
+      </header>
+
+      <main className="container max-w-lg mx-auto px-4 py-6 space-y-8 pb-24">
+        {/* AI Greeting - Moved below header */}
+        <section className="space-y-4">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-2xl font-bold mb-2">{greeting}, John!</h1>
+              <h2 className="text-2xl font-bold mb-2">{greeting}, John!</h2>
               <p className="text-muted-foreground">Ready for something delicious?</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -66,23 +67,8 @@ const Index = () => {
             <MapPin className="h-4 w-4" />
             <span>Cape Town, CBD</span>
           </div>
+        </section>
 
-          <div className="flex gap-3">
-            {quickActions.map((action) => (
-              <Button
-                key={action.label}
-                onClick={action.action}
-                variant={selectedMood === action.label.toLowerCase() ? "default" : "outline"}
-                className="flex-1"
-              >
-                {action.label}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </header>
-
-      <main className="container max-w-lg mx-auto px-4 py-6 space-y-8 pb-24">
         {/* AI Recommendations */}
         <section className="space-y-4">
           <div className="flex items-center gap-2 mb-4">
