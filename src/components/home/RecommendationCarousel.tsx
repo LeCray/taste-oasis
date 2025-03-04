@@ -98,7 +98,7 @@ const RecommendationCarousel = ({
           {recommendations.map((item) => (
             <Card
               key={item.id}
-              className={`min-w-[280px] flex-shrink-0 snap-start overflow-hidden transition-all duration-300 hover:shadow-lg ${
+              className={` flex-shrink-0 snap-start overflow-hidden transition-all duration-300 hover:shadow-lg ${
                 theme === "dark"
                   ? "bg-card border-border/60 hover:border-primary/30"
                   : "bg-card border-border/40 hover:border-primary/20"
@@ -155,7 +155,7 @@ const RecommendationCarousel = ({
                   </div>
                 </div>
                 <Button
-                  className="w-full bg-primary hover:bg-primary-hover text-white font-medium"
+                  className="w-full bg-primary hover:bg-primary-hover text-white font-medium border"
                   onClick={() => {}}
                   aria-label={`Order ${item.title} from ${item.restaurant}`}
                 >
