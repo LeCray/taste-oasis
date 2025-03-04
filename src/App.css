@@ -1,5 +1,177 @@
-
 /* Reset the default padding that might be interfering with the layout */
 #root {
   margin: 0 auto;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+/* Import Inter font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Global styles */
+:root {
+  /* Light theme (default) */
+  --background-light: #f8f7f4; /* Soft off-white for warmer feel */
+  --foreground-light: #333333;
+  --primary-light: #3a6a59; /* Deep olive green */
+  --primary-hover-light: #2c5143;
+  --primary-foreground-light: #ffffff;
+  --secondary-light: #e8d5b5; /* Warm beige */
+  --secondary-foreground-light: #333333;
+  --accent-light: #d3b88c; /* Soft gold */
+  --accent-foreground-light: #333333;
+  --muted-light: #f0ede6;
+  --muted-foreground-light: #71717a;
+  --border-light: #e2dfd7;
+  --card-light: #ffffff;
+  --card-foreground-light: #333333;
+  --popover-light: #ffffff;
+  --popover-foreground-light: #333333;
+  --input-light: #e2dfd7;
+  --ring-light: #3a6a59;
+
+  /* Dark theme */
+  --background-dark: #1e1e22; /* Deep charcoal instead of pure black */
+  --foreground-dark: #f8f7f4;
+  --primary-dark: #5c9283; /* Lighter olive green for dark mode */
+  --primary-hover-dark: #6ba394;
+  --primary-foreground-dark: #ffffff;
+  --secondary-dark: #5d4e36; /* Darker beige */
+  --secondary-foreground-dark: #f8f7f4;
+  --accent-dark: #d3b88c; /* Same soft gold */
+  --accent-foreground-dark: #1e1e22;
+  --muted-dark: #2a2a30;
+  --muted-foreground-dark: #a1a1aa;
+  --border-dark: #3a3a42;
+  --card-dark: #27272c;
+  --card-foreground-dark: #f8f7f4;
+  --popover-dark: #27272c;
+  --popover-foreground-dark: #f8f7f4;
+  --input-dark: #3a3a42;
+  --ring-dark: #5c9283;
+
+  /* Default theme (light) */
+  --background: var(--background-light);
+  --foreground: var(--foreground-light);
+  --primary: var(--primary-light);
+  --primary-hover: var(--primary-hover-light);
+  --primary-foreground: var(--primary-foreground-light);
+  --secondary: var(--secondary-light);
+  --secondary-foreground: var(--secondary-foreground-light);
+  --accent: var(--accent-light);
+  --accent-foreground: var(--accent-foreground-light);
+  --muted: var(--muted-light);
+  --muted-foreground: var(--muted-foreground-light);
+  --border: var(--border-light);
+  --card: var(--card-light);
+  --card-foreground: var(--card-foreground-light);
+  --popover: var(--popover-light);
+  --popover-foreground: var(--popover-foreground-light);
+  --input: var(--input-light);
+  --ring: var(--ring-light);
+}
+
+/* Apply Inter font to all elements */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode overrides */
+.dark {
+  --background: var(--background-dark);
+  --foreground: var(--foreground-dark);
+  --primary: var(--primary-dark);
+  --primary-hover: var(--primary-hover-dark);
+  --primary-foreground: var(--primary-foreground-dark);
+  --secondary: var(--secondary-dark);
+  --secondary-foreground: var(--secondary-foreground-dark);
+  --accent: var(--accent-dark);
+  --accent-foreground: var(--accent-foreground-dark);
+  --muted: var(--muted-dark);
+  --muted-foreground: var(--muted-foreground-dark);
+  --border: var(--border-dark);
+  --card: var(--card-dark);
+  --card-foreground: var(--card-foreground-dark);
+  --popover: var(--popover-dark);
+  --popover-foreground: var(--popover-foreground-dark);
+  --input: var(--input-dark);
+  --ring: var(--ring-dark);
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+/* Card styling enhancements */
+.glass-card {
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide scrollbar for clean UI */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Button hover effects */
+button {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Dark mode specific overrides */
+.dark .glass-card {
+  background-color: rgba(39, 39, 44, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark .glass-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure body background changes in dark mode */
+body.dark {
+  background-color: var(--background-dark);
+}
+
+/* Ensure the root container respects dark mode */
+#root {
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.dark #root {
+  background-color: var(--background-dark);
 }

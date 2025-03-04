@@ -1,12 +1,11 @@
-
 import { Button } from "@/components/ui/button";
 import NavigationBar from "@/components/common/NavigationBar";
 import { Minus, Plus, MapPin, Clock, CreditCard } from "lucide-react";
 
 const Cart = () => {
   return (
-    <div className="min-h-screen bg-background pb-24">
-      <header className="sticky top-0 z-10 bg-background p-4 glass-card">
+    <div className="min-h-screen bg-background dark:bg-background pb-24">
+      <header className="sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm p-4 glass-card">
         <div className="container max-w-lg mx-auto">
           <h1 className="text-2xl font-bold">Your Cart</h1>
         </div>
@@ -17,13 +16,13 @@ const Cart = () => {
           {/* Delivery Address */}
           <div className="glass-card rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
-              <MapPin className="text-coral" />
+              <MapPin className="text-primary" />
               <h2 className="font-semibold">Delivery Address</h2>
             </div>
             <p className="text-sm text-muted-foreground">
               123 Main Street, Apartment 4B
             </p>
-            <Button variant="link" className="text-coral p-0 h-auto mt-1">
+            <Button variant="link" className="text-primary p-0 h-auto mt-1">
               Change Address
             </Button>
           </div>
@@ -31,7 +30,7 @@ const Cart = () => {
           {/* Delivery Time */}
           <div className="glass-card rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
-              <Clock className="text-coral" />
+              <Clock className="text-primary" />
               <h2 className="font-semibold">Delivery Time</h2>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -56,7 +55,7 @@ const Cart = () => {
                     Extra toppings
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-coral">$12.99</span>
+                    <span className="font-semibold text-primary">$12.99</span>
                     <div className="flex items-center gap-2">
                       <Button variant="outline" size="icon" className="h-8 w-8">
                         <Minus className="h-4 w-4" />
@@ -89,7 +88,7 @@ const Cart = () => {
             </div>
             <div className="border-t pt-3 flex justify-between font-semibold">
               <span>Total</span>
-              <span className="text-coral">$43.95</span>
+              <span className="text-primary">$43.95</span>
             </div>
           </div>
 

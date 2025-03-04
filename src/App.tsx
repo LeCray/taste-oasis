@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import OrderTracking from "./pages/OrderTracking";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
+import "./App.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,7 @@ const App = () => {
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <div className="min-h-screen bg-background text-foreground dark:bg-gray-900 dark:text-white antialiased">
+          <div className="min-h-screen bg-background dark:bg-background text-foreground antialiased transition-colors duration-300">
             <Toaster />
             <Sonner />
             <Router>

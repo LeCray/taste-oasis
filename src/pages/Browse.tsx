@@ -1,4 +1,3 @@
-
 import NavigationBar from "@/components/common/NavigationBar";
 import RestaurantCard from "@/components/home/RestaurantCard";
 import { Search, ChevronRight } from "lucide-react";
@@ -32,15 +31,13 @@ const restaurants = [
   },
 ];
 
-const categories = [
-  "Popular", "Trending", "New", "Healthy", "Local Favorites"
-];
+const categories = ["Popular", "Trending", "New", "Healthy", "Local Favorites"];
 
 const Browse = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark:bg-background">
       {/* Header */}
-      <header className="p-4 glass-card sticky top-0 z-10">
+      <header className="p-4 glass-card sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm">
         <div className="container max-w-lg mx-auto">
           <h1 className="text-2xl font-bold mb-4">Browse</h1>
           <div className="relative">
@@ -59,7 +56,10 @@ const Browse = () => {
         <div className="my-6">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold">Categories</h2>
-            <Button variant="ghost" className="text-sm text-coral hover:text-coral-light">
+            <Button
+              variant="ghost"
+              className="text-sm text-primary hover:text-primary/80"
+            >
               See all <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
@@ -68,7 +68,7 @@ const Browse = () => {
               <Button
                 key={category}
                 variant="outline"
-                className="whitespace-nowrap"
+                className="whitespace-nowrap bg-card hover:bg-card/90"
               >
                 {category}
               </Button>
@@ -80,7 +80,10 @@ const Browse = () => {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Popular Restaurants</h2>
-            <Button variant="ghost" className="text-sm text-coral hover:text-coral-light">
+            <Button
+              variant="ghost"
+              className="text-sm text-primary hover:text-primary/80"
+            >
               See all <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>

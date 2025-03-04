@@ -54,9 +54,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background dark:bg-gray-900 transition-colors duration-200">
+    <div className="min-h-screen bg-background dark:bg-background transition-colors duration-200">
       {/* Header */}
-      <header className="p-6 glass-card sticky top-0 z-10 bg-background/80 dark:bg-gray-900/80 backdrop-blur-sm">
+      <header className="p-6 glass-card sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm">
         <div className="container max-w-lg mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">Paradise Eats</h1>
         </div>
@@ -73,7 +73,7 @@ const Index = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Sun className="h-5 w-5 text-coral" />
+              <Sun className="h-5 w-5 text-primary" />
               <span>25°C</span>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Index = () => {
         {/* AI Recommendations */}
         <section className="space-y-4">
           <div className="flex items-center gap-2 mb-4">
-            <Clock className="h-5 w-5 text-coral" />
+            <Clock className="h-5 w-5 text-primary" />
             <h2 className="text-lg font-semibold">Perfect for Lunch</h2>
           </div>
 
@@ -102,7 +102,7 @@ const Index = () => {
               <Button
                 key={prompt.label}
                 variant="outline"
-                className="flex items-center gap-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700"
+                className="flex items-center gap-2 bg-card hover:bg-card/90"
               >
                 <span>{prompt.icon}</span>
                 {prompt.label}
@@ -115,7 +115,7 @@ const Index = () => {
         <Button
           variant="outline"
           onClick={() => navigate("/browse")}
-          className="w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700"
+          className="w-full bg-card hover:bg-card/90"
         >
           Browse All Restaurants
         </Button>

@@ -33,8 +33,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background dark:bg-gray-900 transition-colors duration-200 pb-24">
-      <header className="p-6 glass-card sticky top-0 z-10 bg-background/80 dark:bg-gray-900/80 ">
+    <div className="min-h-screen bg-background dark:bg-background transition-colors duration-200 pb-24">
+      <header className="p-6 glass-card sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm">
         <div className="container max-w-lg mx-auto">
           <h1 className="text-2xl font-bold">Profile</h1>
         </div>
@@ -42,14 +42,14 @@ const Profile = () => {
 
       <main className="container max-w-lg mx-auto px-4 py-6 space-y-6">
         {/* Profile Info */}
-        <section className="rounded-lg p-6 space-y-4 bg-card dark:bg-gray-800 border border-border dark:border-gray-700">
+        <section className="rounded-lg p-6 space-y-4 bg-card border border-border">
           <div className="flex items-center gap-4">
-            <Avatar className="h-20 w-20 border-2 border-coral">
+            <Avatar className="h-20 w-20 border-2 border-primary">
               <AvatarImage
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80"
                 alt="John Doe"
               />
-              <AvatarFallback className="bg-coral/10 text-coral text-xl">
+              <AvatarFallback className="bg-primary/10 text-primary text-xl">
                 JD
               </AvatarFallback>
             </Avatar>
@@ -61,7 +61,7 @@ const Profile = () => {
           </div>
           <Button
             variant="outline"
-            className="w-full mt-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700"
+            className="w-full mt-2 bg-card hover:bg-card/90"
             onClick={() => navigate("/edit-profile")}
           >
             Edit Profile
@@ -69,13 +69,13 @@ const Profile = () => {
         </section>
 
         {/* Quick Access */}
-        <section className="rounded-lg p-4 grid grid-cols-3 gap-2 bg-card dark:bg-gray-800 border border-border dark:border-gray-700">
+        <section className="rounded-lg p-4 grid grid-cols-3 gap-2 bg-card border border-border">
           <Button
             variant="ghost"
             className="flex flex-col items-center gap-2 h-auto py-4"
             onClick={() => navigate("/order-history")}
           >
-            <ShoppingBag className="h-6 w-6 text-coral" />
+            <ShoppingBag className="h-6 w-6 text-primary" />
             <span className="text-xs">Orders</span>
           </Button>
 
@@ -84,7 +84,7 @@ const Profile = () => {
             className="flex flex-col items-center gap-2 h-auto py-4"
             onClick={() => navigate("/favorites")}
           >
-            <Heart className="h-6 w-6 text-coral" />
+            <Heart className="h-6 w-6 text-primary" />
             <span className="text-xs">Favorites</span>
           </Button>
 
@@ -93,19 +93,19 @@ const Profile = () => {
             className="flex flex-col items-center gap-2 h-auto py-4"
             onClick={() => navigate("/help")}
           >
-            <HelpCircle className="h-6 w-6 text-coral" />
+            <HelpCircle className="h-6 w-6 text-primary" />
             <span className="text-xs">Help</span>
           </Button>
         </section>
 
         {/* Settings */}
-        <section className="rounded-lg overflow-hidden bg-card dark:bg-gray-800 border border-border dark:border-gray-700">
+        <section className="rounded-lg overflow-hidden bg-card border border-border">
           <h3 className="font-semibold p-4 pb-2">Settings</h3>
 
           <div className="space-y-1">
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-coral" />
+                <MapPin className="h-5 w-5 text-primary" />
                 <span>Saved Addresses</span>
               </div>
               <Button
@@ -121,7 +121,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <CreditCard className="h-5 w-5 text-coral" />
+                <CreditCard className="h-5 w-5 text-primary" />
                 <span>Payment Methods</span>
               </div>
               <Button
@@ -137,7 +137,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <Bell className="h-5 w-5 text-coral" />
+                <Bell className="h-5 w-5 text-primary" />
                 <span>Notifications</span>
               </div>
               <Switch
@@ -150,7 +150,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <User className="h-5 w-5 text-coral" />
+                <User className="h-5 w-5 text-primary" />
                 <span>Dark Mode</span>
               </div>
               <ThemeToggle />
@@ -161,7 +161,7 @@ const Profile = () => {
         {/* Account Actions */}
         <Button
           variant="ghost"
-          className="w-full flex items-center justify-center gap-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300"
+          className="w-full flex items-center justify-center gap-2 text-red-500 hover:text-red-600"
           onClick={handleLogout}
         >
           <LogOut className="h-5 w-5" />
