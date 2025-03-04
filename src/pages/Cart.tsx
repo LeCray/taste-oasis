@@ -5,8 +5,8 @@ import { Minus, Plus, MapPin, Clock, CreditCard } from "lucide-react";
 const Cart = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-background pb-24">
-      <header className="sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-4">
-        <div className="container max-w-lg mx-auto">
+      <header className="sticky py-6 pl-4 top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-4">
+        <div className=" max-w-lg mx-auto">
           <h1 className="text-2xl font-bold">Your Cart</h1>
         </div>
       </header>
@@ -14,7 +14,7 @@ const Cart = () => {
       <main className="container max-w-lg mx-auto p-4">
         <div className="space-y-6">
           {/* Delivery Address */}
-          <div className="glass-card rounded-lg p-4">
+          <div className="rounded-lg p-4 bg-card border border-border">
             <div className="flex items-center gap-3 mb-2">
               <MapPin className="text-primary" />
               <h2 className="font-semibold">Delivery Address</h2>
@@ -28,7 +28,7 @@ const Cart = () => {
           </div>
 
           {/* Delivery Time */}
-          <div className="glass-card rounded-lg p-4">
+          <div className="rounded-lg p-4 bg-card border border-border">
             <div className="flex items-center gap-3 mb-2">
               <Clock className="text-primary" />
               <h2 className="font-semibold">Delivery Time</h2>
@@ -41,7 +41,10 @@ const Cart = () => {
           {/* Cart Items */}
           <div className="space-y-4">
             {[...Array(3)].map((_, index) => (
-              <div key={index} className="glass-card rounded-lg p-4 flex gap-4">
+              <div
+                key={index}
+                className="rounded-lg p-4 flex gap-4 bg-card border border-border"
+              >
                 <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                   <img
                     src={`https://picsum.photos/200/200?random=${index + 10}`}
@@ -72,7 +75,7 @@ const Cart = () => {
           </div>
 
           {/* Order Summary */}
-          <div className="glass-card rounded-lg p-4 space-y-3">
+          <div className="rounded-lg p-4 space-y-3 bg-card border border-border">
             <h2 className="font-semibold mb-3">Order Summary</h2>
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Subtotal</span>

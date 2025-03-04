@@ -5,8 +5,8 @@ import { Phone, MessageCircle, Clock, MapPin, User } from "lucide-react";
 const OrderTracking = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-background pb-24">
-      <header className="sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-4">
-        <div className="container max-w-lg mx-auto">
+      <header className="sticky py-6 pl-4  top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-4">
+        <div className="max-w-lg mx-auto">
           <h1 className="text-2xl font-bold">Track Order</h1>
           <p className="text-sm text-muted-foreground">Order #123456</p>
         </div>
@@ -14,7 +14,7 @@ const OrderTracking = () => {
 
       <main className="container max-w-lg mx-auto p-4 space-y-6">
         {/* Delivery Status */}
-        <div className="glass-card rounded-lg p-6">
+        <div className="rounded-lg p-6 space-y-4 bg-card border border-border">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="font-semibold mb-1">Estimated Delivery</h2>
@@ -24,8 +24,8 @@ const OrderTracking = () => {
           </div>
           <div className="space-y-4">
             <div className="flex gap-4">
-              <div className="w-1 bg-primary rounded relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full" />
+              <div className="w-1.5 bg-primary/90 rounded-full relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-md border border-background" />
               </div>
               <div className="flex-1 pb-4">
                 <h3 className="font-semibold">Order Confirmed</h3>
@@ -33,8 +33,8 @@ const OrderTracking = () => {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-1 bg-primary rounded relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full" />
+              <div className="w-1.5 bg-primary/90 rounded-full relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-md border border-background" />
               </div>
               <div className="flex-1 pb-4">
                 <h3 className="font-semibold">Preparing Your Order</h3>
@@ -42,8 +42,8 @@ const OrderTracking = () => {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-1 bg-muted rounded relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 border-2 border-primary rounded-full bg-background" />
+              <div className="w-1.5 bg-gray-300 dark:bg-gray-600 rounded-full relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 border-2 border-primary rounded-full bg-background shadow-md" />
               </div>
               <div className="flex-1 pb-4">
                 <h3 className="font-semibold">On the Way</h3>
@@ -51,8 +51,8 @@ const OrderTracking = () => {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-1 bg-muted rounded relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 border-2 border-muted rounded-full bg-background" />
+              <div className="w-1.5 bg-gray-300 dark:bg-gray-600 rounded-full relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 border-2 border-gray-300 dark:border-gray-500 rounded-full bg-background shadow-md" />
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold">Delivered</h3>
@@ -63,7 +63,7 @@ const OrderTracking = () => {
         </div>
 
         {/* Delivery Details */}
-        <div className="glass-card rounded-lg p-4 space-y-4">
+        <div className="rounded-lg p-4 space-y-4 bg-card border border-border">
           <div className="flex items-center gap-4 pb-4 border-b">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
               <User className="h-6 w-6 text-primary" />
@@ -95,7 +95,7 @@ const OrderTracking = () => {
         </div>
 
         {/* Order Summary */}
-        <div className="glass-card rounded-lg p-4">
+        <div className="rounded-lg p-4 bg-card border border-border">
           <h2 className="font-semibold mb-4">Order Summary</h2>
           <div className="space-y-3">
             <div className="flex justify-between items-center">

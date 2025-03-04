@@ -34,8 +34,8 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-background dark:bg-background transition-colors duration-200 pb-24">
-      <header className="p-6 sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
-        <div className="container max-w-lg mx-auto">
+      <header className="py-6 pl-4  sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+        <div className=" max-w-lg mx-auto">
           <h1 className="text-2xl font-bold">Profile</h1>
         </div>
       </header>
@@ -46,17 +46,18 @@ const Profile = () => {
           <div className="flex items-center gap-4">
             <Avatar className="h-20 w-20 border-2 border-primary">
               <AvatarImage
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80"
-                alt="John Doe"
+                src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,q_auto,w_720/67338d48953975001dd4b446.png"
+                alt="Wesley Snipes"
+                className="object-cover"
               />
               <AvatarFallback className="bg-primary/10 text-primary text-xl">
-                JD
+                WS
               </AvatarFallback>
             </Avatar>
             <div>
-              <h2 className="text-xl font-bold">John Doe</h2>
-              <p className="text-muted-foreground">johndoe@example.com</p>
-              <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+              <h2 className="text-xl font-bold">Wesley Snipes</h2>
+              <p className="text-muted-foreground">wes@foodie.com</p>
+              <p className="text-sm text-muted-foreground">+27 (72) 123-4572</p>
             </div>
           </div>
           <Button
