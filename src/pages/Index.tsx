@@ -65,7 +65,7 @@ const Index = () => {
       <main className="container max-w-lg mx-auto px-4 py-6 space-y-8 pb-24">
         {/* AI Greeting */}
         <section className="space-y-4">
-          <div>
+          <div style={{ paddingRight: 20 }}>
             <h2 className="text-3xl font-bold mb-2">{greeting}, Wesley!</h2>
             <p className="text-muted-foreground">
               Ready for something delicious?
