@@ -98,7 +98,7 @@ const RecommendationCarousel = ({
           {recommendations.map((item) => (
             <Card
               key={item.id}
-              className={` flex-shrink-0 snap-start overflow-hidden transition-all duration-300 hover:shadow-lg ${
+              className={`max-w-[280px] flex-shrink-0 snap-start overflow-hidden transition-all duration-300 hover:shadow-lg ${
                 theme === "dark"
                   ? "bg-card border-border/60 hover:border-primary/30"
                   : "bg-card border-border/40 hover:border-primary/20"
