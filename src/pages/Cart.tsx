@@ -5,7 +5,7 @@ import { Minus, Plus, MapPin, Clock, CreditCard } from "lucide-react";
 const Cart = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-background pb-24">
-      <header className="sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm p-4 glass-card">
+      <header className="sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-4">
         <div className="container max-w-lg mx-auto">
           <h1 className="text-2xl font-bold">Your Cart</h1>
         </div>

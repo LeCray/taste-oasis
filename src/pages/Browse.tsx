@@ -37,7 +37,7 @@ const Browse = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-background">
       {/* Header */}
-      <header className="p-4 glass-card sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm">
+      <header className="p-4 sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
         <div className="container max-w-lg mx-auto">
           <h1 className="text-2xl font-bold mb-4">Browse</h1>
           <div className="relative">

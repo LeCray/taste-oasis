@@ -13,14 +13,8 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav
-      className={`fixed bottom-0 left-0 right-0 backdrop-blur-md border-t border-border p-4 z-10 animate-slideUp ${
-        theme === "dark"
-          ? "bg-[#1C1C1E]/80 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
-          : "bg-background/95 shadow-[0_-4px_10px_rgba(0,0,0,0.03)]"
-      }`}
-    >
-      <div className="container max-w-lg mx-auto">
+    <nav className="fixed bottom-0 left-0 right-0 backdrop-blur-md border-t border-border py-3 px-4 z-10 animate-slideUp bg-background/95 dark:bg-background/95 shadow-[0_-4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_-4px_10px_rgba(0,0,0,0.2)]">
+      <div className="w-full">
         <div className="flex justify-between items-center">
           <NavButton
             path="/"
@@ -82,31 +76,22 @@ const NavButton = ({
     path === "/" ? currentPath === path : currentPath.includes(path);
 
   return (
-    <div className="flex flex-col items-center">
-      <Button
-        variant="ghost"
-        size="icon"
-        className={`relative rounded-full w-12 h-12 ${
-          isActive
-            ? "text-primary bg-primary/10"
-            : "text-muted-foreground hover:text-primary/80"
-        }`}
-        onClick={() => handleNavigation(path)}
-        aria-label={label}
-      >
-        {icon}
-        {isActive && (
-          <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
-        )}
-      </Button>
-      <span
-        className={`text-xs mt-1 ${
-          isActive ? "text-primary font-medium" : "text-muted-foreground"
-        }`}
-      >
-        {label}
-      </span>
-    </div>
+    <Button
+      variant="ghost"
+      size="icon"
+      className={`relative rounded-full w-12 h-12 ${
+        isActive
+          ? "text-primary bg-primary/10"
+          : "text-muted-foreground hover:text-primary/80"
+      }`}
+      onClick={() => handleNavigation(path)}
+      aria-label={label}
+    >
+      {icon}
+      {isActive && (
+        <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full" />
+      )}
+    </Button>
   );
 };
 

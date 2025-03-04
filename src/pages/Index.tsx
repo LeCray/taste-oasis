@@ -56,31 +56,35 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-background transition-colors duration-200">
       {/* Header */}
-      <header className="p-6 glass-card sticky top-0 z-10 bg-background/80 dark:bg-background/80 backdrop-blur-sm">
-        <div className="container max-w-lg mx-auto flex justify-between items-center">
+      <header className="py-6 pl-4 sticky top-0 z-10 backdrop-blur-md border-b border-border bg-background/95 dark:bg-background/95 shadow-[0_4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+        <div className="max-w-lg">
           <h1 className="text-2xl font-bold">Paradise Eats</h1>
         </div>
       </header>
 
       <main className="container max-w-lg mx-auto px-4 py-6 space-y-8 pb-24">
-        {/* AI Greeting - Moved below header */}
+        {/* AI Greeting */}
         <section className="space-y-4">
-          <div className="flex justify-between items-start">
-            <div>
-              <h2 className="text-2xl font-bold mb-2">{greeting}, John!</h2>
-              <p className="text-muted-foreground">
-                Ready for something delicious?
-              </p>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Sun className="h-5 w-5 text-primary" />
-              <span>25°C</span>
-            </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-2">{greeting}, Wesley!</h2>
+            <p className="text-muted-foreground">
+              Ready for something delicious?
+            </p>
           </div>
 
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="h-4 w-4" />
-            <span>Cape Town, CBD</span>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="h-4 w-4" />
+              <span>Cape Town, CBD</span>
+            </div>
+
+            <div
+              style={{ marginTop: 10 }}
+              className="flex items-center gap-2 text-sm text-muted-foreground"
+            >
+              <Sun className="h-4 w-4 text-primary" />
+              <span>25°C</span>
+            </div>
           </div>
         </section>
 
