@@ -155,7 +155,7 @@ const RecommendationCarousel = ({
                   </div>
                 </div>
                 <Button
-                  className="w-full bg-primary hover:bg-primary-hover text-white font-medium border"
+                  className="w-full bg-[hsl(120,61%,34%)] hover:bg-[hsl(120,61%,34%)]/90 text-white dark:text-primary-foreground font-medium"
                   onClick={() => {}}
                   aria-label={`Order ${item.title} from ${item.restaurant}`}
                 >
