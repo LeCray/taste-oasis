@@ -65,11 +65,11 @@ const OrderTracking = () => {
         {/* Delivery Details */}
         <div className="rounded-lg p-4 space-y-4 bg-card border border-border">
           <div className="flex items-center gap-4 pb-4 border-b">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <User className="h-6 w-6 text-primary" />
+            <div className=" h-12 rounded-full bg-primary/10 flex items-center ">
+              <User className="h-6 w-4 text-primary" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold">John Doe</h3>
+              <h3 className="font-semibold">Donald</h3>
               <p className="text-sm text-muted-foreground">
                 Your Delivery Partner
               </p>
@@ -100,16 +100,16 @@ const OrderTracking = () => {
           <div className="space-y-3">
             <div className="flex justify-between items-center">
               <span>2× Spicy Ramen</span>
-              <span>$25.98</span>
+              <span>R 25.98</span>
             </div>
             <div className="flex justify-between items-center">
               <span>1× California Roll</span>
-              <span>$12.99</span>
+              <span>R 12.99</span>
             </div>
             <div className="pt-3 border-t mt-3">
               <div className="flex justify-between items-center font-semibold">
                 <span>Total</span>
-                <span className="text-primary">$38.97</span>
+                <span className="text-primary">R 38.97</span>
               </div>
             </div>
           </div>

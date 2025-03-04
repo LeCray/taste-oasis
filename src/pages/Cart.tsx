@@ -58,7 +58,7 @@ const Cart = () => {
                     Extra toppings
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-primary">$12.99</span>
+                    <span className="font-semibold text-primary">R 12.99</span>
                     <div className="flex items-center gap-2">
                       <Button variant="outline" size="icon" className="h-8 w-8">
                         <Minus className="h-4 w-4" />
@@ -79,19 +79,19 @@ const Cart = () => {
             <h2 className="font-semibold mb-3">Order Summary</h2>
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Subtotal</span>
-              <span>$38.97</span>
+              <span>R 38.97</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Delivery Fee</span>
-              <span>$2.99</span>
+              <span>R 2.99</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Service Fee</span>
-              <span>$1.99</span>
+              <span>R 1.99</span>
             </div>
             <div className="border-t pt-3 flex justify-between font-semibold">
               <span>Total</span>
-              <span className="text-primary">$43.95</span>
+              <span className="text-primary">R 43.95</span>
             </div>
           </div>
 
